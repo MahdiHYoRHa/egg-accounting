@@ -1,0 +1,56 @@
+<SimpleRV>:
+    viewclass: 'HistoryButton'
+    RecycleBoxLayout:
+        default_size: None, dp(40)
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+        orientation: 'vertical'
+
+<EggAppUI>:
+    tab_pos: 'top_mid'
+    tab_height: '48dp'
+    canvas.before:
+        Color:
+            rgba: 0.05, 0.07, 0.12, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<Button>:
+    background_normal: ''
+    background_color: (0.0, 0.7, 0.9, 1)
+    color: (0.06, 0.06, 0.12, 1)
+    font_size: '15sp'
+    canvas.before:
+        Color:
+            rgba: self.background_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10]
+
+<TextInput>:
+    background_color: (0.09, 0.13, 0.25, 1)
+    foreground_color: (0.95, 0.97, 0.99, 1)
+    padding: [10, 10]
+    cursor_color: (0.0, 0.83, 1, 1)
+
+<Label>:
+    color: (0.9, 0.94, 0.98, 1)
+    font_size: '15sp'
+
+# Simple styling for TabbedPanelItem contents
+<TabbedPanelItem>:
+    background_color: (0.08, 0.12, 0.22, 1)
+
+
+<HistoryButton@Button>:
+    size_hint_y: None
+    height: dp(44)
+    background_normal: ''
+    background_color: (0.12, 0.16, 0.28, 1)
+    color: (0.95, 0.97, 0.99, 1)
+    halign: 'right'
+    text_size: self.width - dp(20), None
